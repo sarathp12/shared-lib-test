@@ -1,6 +1,22 @@
 @library('my-shared-lib')_
+pipeline {
+    agent none
+    
+    tools  {
+       maven 'maven 3.5.4'
+       jdk 'jdk'
+      }
 
-stage('test') {
- echo 'Hello World'
- sayHello 'Seumans'
-}
+    stages {
+      
+      stage ('test') { 
+         agent {
+           label 'master'
+        }
+         steps {
+           echo 'Hello World'
+           sayHello 'Seumans'
+        }
+      }
+    }
+ }
