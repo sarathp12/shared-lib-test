@@ -1,4 +1,4 @@
-@Library('cicd-jenkins-shared-lib-test')_
+@Library('my-shared-lib')_
 
 pipeline {
     agent none
