@@ -1,4 +1,4 @@
-@library//my-shared-lib/vars/sayHello.groovy
+@library('my-shared-lib')_
 
 stage('test') {
  echo 'Hello World'
