@@ -1,4 +1,5 @@
-@library('my-shared-lib')_
+@Library('my-shared-lib')_
+
 pipeline {
     agent none
     
