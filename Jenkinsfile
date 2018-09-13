@@ -4,6 +4,7 @@ pipeline {
     agent none
 
     tools  {
+       maven 'maven 3.5.4'
        jdk 'jdk'
       }
 
@@ -16,9 +17,10 @@ pipeline {
          steps {
            echo 'Hello World'
            sayHello 'Seumans'
+           mbuild 'clean package'
         }
       }
-      stage ('build') {
+      stage ('build')
         agent {
            label 'master'
         }
