@@ -1,16 +1,15 @@
-@Library('my-shared-lib')_
+@Library('cicd-jenkins-shared-lib-test')_
 
 pipeline {
     agent none
-    
+
     tools  {
-       maven 'maven 3.5.4'
        jdk 'jdk'
       }
 
     stages {
-      
-      stage ('test') { 
+
+      stage ('test') {
          agent {
            label 'master'
         }
@@ -19,5 +18,16 @@ pipeline {
            sayHello 'Seumans'
         }
       }
+      stage ('build') {
+        agent {
+           label 'master'
+        }
+         steps {
+            echo "i am running"
+            mbuild 'clean package'
+            archiveArtifacts artifacts: '**/*.war'
+           }
+        }
     }
  }
+
