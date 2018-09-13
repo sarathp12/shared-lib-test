@@ -20,7 +20,7 @@ pipeline {
            mbuild 'clean package'
         }
       }
-      stage ('build')
+      stage ('build') {
         agent {
            label 'master'
         }
