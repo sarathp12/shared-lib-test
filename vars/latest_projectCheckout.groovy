@@ -18,7 +18,8 @@ def call(String stageName, PipelineContext context) {
 		sh("git clean -fd")
 	}
 	git([url: pipelineConfig['gitURl'], branch: 'COPS-419', credentialsId: 'final-ele-app-connect'])
-	String commitHash = sh (returnStdout: true, script: "git rev-parse --short HEAD").trim()
+	
+        String commitHash = sh (returnStdout: true, script: "git rev-parse --short HEAD").trim()
 	String buildId = "${env.BUILD_NUMBER}-${commitHash}"
 	
 	context.contextMap['BUILD_ID'] = buildId
