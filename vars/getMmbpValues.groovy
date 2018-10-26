@@ -8,4 +8,5 @@
             }
           return proplist
  }
+getMmpbValues ()
  
