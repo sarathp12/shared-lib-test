@@ -1,6 +1,6 @@
 #! /usr/bin/groovy
 
- def getIncrementVals () {
+ def getIncrementVals = {
 	switch (params.INCREMENT_VERSION) {
               case 'MAJOR':
                      ++proplist.major

@@ -1,5 +1,5 @@
 #! /usr/bin/groovy
-def writeIncrementVals () {
+def writeIncrementVals = {
 	 File x = new File('build-version.properties')
          x.write "# Altered property values when build-version.properties is found\n"
          x << "major=proplist.major\n"

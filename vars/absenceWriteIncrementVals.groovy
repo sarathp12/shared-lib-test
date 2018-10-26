@@ -1,5 +1,5 @@
 #! /usr/bin/groovy
-def writeIncrementVals () {
+def writeIncrementVals = {
 	File x = new File('build-version.properties')
         x.write "# Property values when build-version.properties is not found\n"
         x << "major=0\n"
