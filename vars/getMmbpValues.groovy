@@ -6,7 +6,8 @@
           proplistFile.withInputStream {
           proplist.load(it)
             }
-          return proplist
+          x = proplist
+          println x
  }
-getMmpbValues ()
+
  
